@@ -1,7 +1,7 @@
 :root {
     /* Pink Theme (Kdrama) */
     --primary-color: #f98edb;
-    --secondary-color: #fdb2e8;
+    --secondary-color: #fd98e0;
     --highlight-color: rgba(255, 182, 214, 0.9);
     --card-color: #ffffff;
     --text-color: #333;
@@ -14,7 +14,7 @@
 /* Blue Theme (Cdrama) */
 .cdrama-theme {
     --primary-color: #8e97f9;
-    --secondary-color: #b2b8fd;
+    --secondary-color: #929bfd;
     --highlight-color: rgba(183, 182, 255, 0.9);
     --sidebar-bg: #ccc9fe;
     --body-bg: #d9daff;
