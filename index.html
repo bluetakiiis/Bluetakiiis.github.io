@@ -16,7 +16,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="kdrama.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
 
     <body>
@@ -27,15 +27,15 @@
                 </a>
                 <h1 class="navbar-title mx-auto">Rupika's Kdrama Recs</h1>
                 
-                 <div class="navbar-brand invisible">
-                    <span class="material-symbols-outlined">menu</span>
+                 <div class="navbar-brand">
+                    <span class="material-symbols-outlined" id="theme-toggle">toggle_off</span>
                 </div>
             </div>
         </nav>
         
         <section id="sidebar">
             <h4>The Drama Scroll</h4>
-            <ol>
+            <ol id="kdrama-list">
                 <li>7 First Kisses</li>
                 <li>A Business Proposal</li>
                 <li>Adolescence Medley</li>
@@ -133,10 +133,51 @@
                 <li>W: Two Worlds</li>
                 <li>XX</li>
             </ol>
+            
+            <ol id="cdrama-list" style="display: none;">
+                <li>A Love So Beautiful</li>
+                <li>A Robot in the Orange Orchard</li>
+                <li>Accidentally in Love</li>
+                <li>Be With You</li>
+                <li>Dragon Day, You're Dead</li>
+                <li>Falling Into Your Smile</li>
+                <li>Gank Your Heart</li>
+                <li>Go Go Squid!</li>
+                <li>Hello, Mr. Gu</li>
+                <li>Hidden Love</li>
+                <li>I Have a Smart Doctor Wife</li>
+                <li>I Want to Resign Every Single Day</li>
+                <li>Love O2O</li>
+                <li>Love Game in Eastern Fantasy</li>
+                <li>Master Devil Do Not Kiss Me</li>
+                <li>Master Devil Do Not Kiss Me 2</li>
+                <li>My Girlfriend Is an Alien</li>
+                <li>My Little Princess</li>
+                <li>Perfect and Casual</li>
+                <li>Please Feel at Ease, Mr. Ling</li>
+                <li>Rise From the Ashes</li>
+                <li>Super Star Academy</li>
+                <li>Sweet Teeth</li>
+                <li>The Best Thing</li>
+                <li>The Big Boss</li>
+                <li>The Brightest Star in the Sky</li>
+                <li>The Demon Master</li>
+                <li>The Eternal Love</li>
+                <li>The Eternal Love 2</li>
+                <li>The First Frost</li>
+                <li>The Love Duel</li>
+                <li>The Resilient Dr. Ling</li>
+                <li>The Romance of Tiger and Rose</li>
+                <li>Unforgettable Love</li>
+                <li>Unique Lady - Part 1</li>
+                <li>Walk Into Your Memory</li>
+                <li>When We Were Young</li>
+                <li>Wonderful Fate</li>
+            </ol>
         </section>
         
         <main> 
-            <section id="main-rec">
+            <section id="kdrama-rec">
                 <div class="recommendation-container">
                     <div class="main-recommendation">
                         <img src="https://asianwiki.com/images/a/a9/Alchemy_of_Souls-p1.jpg" alt="Alchemy of Souls" class="main-img">
@@ -459,6 +500,203 @@
                             <p><strong>Episodes:</strong> 20</p>
                             <p><strong>Rating:</strong>  10/10</p>
                             <a href="https://t.kisskh.id/K8cv">Watch Now</a>
+                        </div>
+                    </div>
+               
+                </div>
+            </section>
+
+            <section id="cdrama-rec" style="display: none;">
+                <div class="recommendation-container">
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNjYyNTExYTktNjg0MC00MmEyLThiZjQtYTZiM2ZkNjM4NTRjXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="A Love So Beautiful" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">A Love So Beautiful</h2>
+                            <p>The ups and downs of school, family and growing up test the affection between a budding artist and her handsome but indifferent classmate and neighbor.</p>
+                            <p><strong>Genre:</strong> Comedy / Romance / Life / Youth</p>
+                            <p><strong>Episodes:</strong> 24</p>
+                            <p><strong>Rating:</strong>  10/10</p>
+                            <a href="https://t.kisskh.id/ysQu">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BYTUwMzgxZTktYTc4Mi00MDliLTg5ZTYtODQ2OTcxNjIzYTA2XkEyXkFqcGc@._V1_.jpg" alt="Falling Into Your Smile" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Falling Into Your Smile</h2>
+                            <p>After joining an all-male e-sports team, an amateur gamer tests her skills and leads her team to the world championships.</p>
+                            <p><strong>Genre:</strong> Comedy / Romance / Youth / Sports</p>
+                            <p><strong>Episodes:</strong> 31</p>
+                            <p><strong>Rating:</strong>  10/10</p>
+                            <a href="https://t.kisskh.id/HZEQ">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BYTZlZTdmYjAtMDQ3OS00ZDZmLTliNmYtZTIxOTgwYWI3ODhhXkEyXkFqcGc@._V1_.jpg" alt="Gank Your Heart" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Gank Your Heart</h2>
+                            <p>A passionate streamer and a cold pro gamer clash in the world of e-sports, where rivalry, romance, and ambition collide.</p>
+                            <p><strong>Genre:</strong> Romance / Youth / Drama / Sports</p>
+                            <p><strong>Episodes:</strong> 35</p>
+                            <p><strong>Rating:</strong>  9/10</p>
+                            <a href="https://t.kisskh.id/LyqH">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZGQ0MWEwOWEtMDY5My00NTA3LWJmNWQtZTJmNWY5MWVlZTMyXkEyXkFqcGc@._V1_.jpg" alt="Go Go Squid!" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Go Go Squid!</h2>
+                            <p>A sweet coder falls for a legendary e-sports star, but winning his heart might be harder than any competition she’s faced.</p>
+                            <p><strong>Genre:</strong> Comedy / Romance / Youth / Sports</p>
+                            <p><strong>Episodes:</strong> 41</p>
+                            <p><strong>Rating:</strong>  10/10</p>
+                            <a href="https://t.kisskh.id/QYSw">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://miro.medium.com/v2/resize:fit:1400/1*ItIHDQe6Qj0jhDpK6JJt2A@2x.jpeg" alt="Hidden Love" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Hidden Love</h2>
+                            <p>Since high school, Sang Zhi has had a crush on Duan Jiaxu. When fate brings them together again, they find a chance to embark on a sweet relationship.</p>
+                            <p><strong>Genre:</strong> Comedy / Romance / Life / Youth</p>
+                            <p><strong>Episodes:</strong> 25</p>
+                            <p><strong>Rating:</strong>  10/10</p>
+                            <a href="https://t.kisskh.id/7Pmd">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNTkwMTEwNTAtODViYS00OTFkLTlhMzUtYWQzMGNhZTRiZDY1XkEyXkFqcGc@._V1_.jpg" alt="Love O2O" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Love O2O</h2>
+                            <p>When a computer-science major gets dumped by her "husband" in an online role-playing game, she attracts a new proposal from the game’s top player.</p>
+                            <p><strong>Genre:</strong> Business / Comedy / Romance / Drama</p>
+                            <p><strong>Episodes:</strong> 30</p>
+                            <p><strong>Rating:</strong>  9/10</p>
+                            <a href="https://t.kisskh.id/5wPs">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMDAxZDU4YjAtZWRiMy00NTBmLWI5YWYtZWJlNTcyYThiNThkXkEyXkFqcGc@._V1_.jpg" alt="Love Game in Eastern Fantasy" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Love Game in Eastern Fantasy</h2>
+                            <p>Pulled into the pages of a fantasy novel, a woman is shocked to find herself stuck in the role of a villain. Now, she must battle to rewrite her destiny.</p>
+                            <p><strong>Genre:</strong> Romance / Wuxia / Fantasy</p>
+                            <p><strong>Episodes:</strong> 32</p>
+                            <p><strong>Rating:</strong>  10/10</p>
+                            <a href="https://t.kisskh.id/wcNQ">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://www.dvdplanetstore.pk/wp-content/uploads/2018/01/9wRLRyAsiudvsy1UInSAqhRIJDJ.jpg" alt="Master Devil Do Not Kiss Me" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Master Devil Do Not Kiss Me</h2>
+                            <p>After losing everything, a fierce teen is forced to live with a ruthless heir — and neither of them is ready for what comes next.</p>
+                            <p><strong>Genre:</strong> Comedy / Romance / Youth</p>
+                            <p><strong>Episodes:</strong> 23</p>
+                            <p><strong>Rating:</strong>  7.9/10</p>
+                            <a href="https://t.kisskh.id/hNzK">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNzdkYzA0MjMtOTIxOC00MzlkLWI5ZDUtYmE5ZDBiMDRjOWRhXkEyXkFqcGc@._V1_.jpg" alt="My Girlfriend is an Alien" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">My Girlfriend is an Alien</h2>
+                            <p>After arriving from another planet, a quirky young alien tries to adapt to Earth — until an unexpected romance complicates everything.</p>
+                            <p><strong>Genre:</strong> Comedy / Romance / Fantasy</p>
+                            <p><strong>Episodes:</strong> 28</p>
+                            <p><strong>Rating:</strong>  8/10</p>
+                            <a href="https://t.kisskh.id/PeUy">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZjM0ODljZTItOGJkYS00N2UyLWExNjItZmZjOGU3ZjY3MTU5XkEyXkFqcGc@._V1_.jpg" alt="Perfect and Casual" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Perfect and Casual</h2>
+                            <p>A serious professor and a carefree student enter a fake marriage, but unexpected feelings soon start to blur the lines between pretense and reality.</p>
+                            <p><strong>Genre:</strong> Comedy / Romance / Drama</p>
+                            <p><strong>Episodes:</strong> 24</p>
+                            <p><strong>Rating:</strong>  8/10</p>
+                            <a href="https://t.kisskh.id/T26W">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://i.mydramalist.com/73dALN_4f.jpg" alt="The Best Thing" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">The Best Thing</h2>
+                            <p>A hotel manager battling insomnia turns to a traditional doctor for help — but their sessions unlock more than just healing, sparking an unexpected connection.</p>
+                            <p><strong>Genre:</strong> Business / Romance / Drama / Medical</p>
+                            <p><strong>Episodes:</strong> 28</p>
+                            <p><strong>Rating:</strong>  9/10</p>
+                            <a href="https://t.kisskh.id/B4zj">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/0x3k7yvmd6nlvhc1730712750868_Y3NFpNbQ/0" alt="The Brightest Star in the Sky" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">The Brightest Star in the Sky</h2>
+                            <p>In the glare of fame, a determined music lover steps into a world of secrets and silence — where dreams burn bright but shadows linger.</p>
+                            <p><strong>Genre:</strong> Music / Comedy / Romance / Life</p>
+                            <p><strong>Episodes:</strong> 44</p>
+                            <p><strong>Rating:</strong>  8/10</p>
+                            <a href="https://t.kisskh.id/oNf7">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://vcover-vt-pic.wetvinfo.com/vcover_vt_pic/0/i1vf39zayssgbca1730713505038_gVU8UDXY/0" alt="The Eternal Love" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">The Eternal Love</h2>
+                            <p>The ups and downs of school, family and growing up test the affection between a budding artist and her handsome but indifferent classmate and neighbor.</p>
+                            <p><strong>Genre:</strong> Historical / Comedy / Romance / Fantasy</p>
+                            <p><strong>Episodes:</strong> 24</p>
+                            <p><strong>Rating:</strong>  7.9/10</p>
+                            <a href="https://t.kisskh.id/7ytX">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BODg2MzI5OTctNjM5OC00ZWMzLWJiYWQtZjgzMTU3NGM2MWIwXkEyXkFqcGc@._V1_.jpg" alt="The Romance of Tiger and Rose" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">The Romance of Tiger and Rose</h2>
+                            <p>A screenwriter is trapped in her own drama as a minor character facing death. To survive, she must outwit palace politics and confront a prince who may change her destiny.</p>
+                            <p><strong>Genre:</strong> Historical / Comedy / Romance / Fantasy</p>
+                            <p><strong>Episodes:</strong> 24</p>
+                            <p><strong>Rating:</strong>  10/10</p>
+                            <a href="https://t.kisskh.id/YyYX">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMjUxYzdmZmItMzJkZC00MDc0LWIwYmEtNWFlYjllZDI4NzliXkEyXkFqcGc@._V1_.jpg" alt="Unforgettable Love" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">Unforgettable Love</h2>
+                            <p>A CEO and a child psychologist join forces to protect a child, but their growing connection begins to rewrite both their lives in ways they never expected.</p>
+                            <p><strong>Genre:</strong> Comedy / Romance / Drama</p>
+                            <p><strong>Episodes:</strong> 24</p>
+                            <p><strong>Rating:</strong>  8/10</p>
+                            <a href="https://t.kisskh.id/xA8S">Watch Now</a>
+                        </div>
+                    </div>
+
+                    <div class="main-recommendation">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNjdhNGJlZmEtOTc5OS00NzQyLTg5ZWUtNTE2NjAxNzNjMmI4XkEyXkFqcGc@._V1_.jpg" alt="When We Were Young" class="main-img">
+                        <div class="main-text">
+                            <h2 class="main-title">When We Were Young</h2>
+                            <p>After losing her dreams, Yang Xi faces the bike thief who took her crown — and high school just got a whole lot more complicated.</p>
+                            <p><strong>Genre:</strong> Life / Youth / Family</p>
+                            <p><strong>Episodes:</strong> 24</p>
+                            <p><strong>Rating:</strong>  8/10</p>
+                            <a href="https://t.kisskh.id/1SkG">Watch Now</a>
                         </div>
                     </div>
                 </div>
