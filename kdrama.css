@@ -38,6 +38,7 @@ html, body {
 }
 
 .navbar-title {
+  color: white;
   flex: 1;               
   min-width: 0;       
   margin: 0 0.5rem;      
@@ -45,6 +46,7 @@ html, body {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 1.2rem;    
+  text-align: center;
 }
 
 .navbar .container-fluid {
