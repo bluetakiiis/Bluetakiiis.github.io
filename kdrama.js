@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('cdrama-list').style.display = 'block';
         document.getElementById('kdrama-rec').style.display = 'none';
         document.getElementById('cdrama-rec').style.display = 'block';
-        loadCdramas(); // Load Cdrama recommendations on toggle
+        loadCdramas(); 
     }
 
     menuBtn.addEventListener('click', function () {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('cdrama-list').style.display = 'block';
             document.getElementById('kdrama-rec').style.display = 'none';
             document.getElementById('cdrama-rec').style.display = 'block';
-            loadCdramas(); // Load Cdrama recommendations on toggle
+            loadCdramas(); 
         } else {
             document.body.classList.remove('cdrama-theme');
             themeToggle.textContent = 'toggle_off';
@@ -114,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return drama.image;
     }
 
-    // Dynamically load Cdrama recommendations from dramas.json
     async function loadCdramas() {
         const container = document.getElementById('cdrama-container');
         if (!container) return;
@@ -143,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Dynamically load Kdrama recommendations from dramas.json
     async function loadKdramas() {
         const container = document.getElementById('kdrama-container');
         if (!container) return;
@@ -172,7 +170,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Dynamically load sidebar lists from dramas.json
     async function loadSidebarLists() {
         try {
             const response = await fetch('dramas.json');
@@ -196,18 +193,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         } catch (err) {
-            // Optionally handle error
         }
     }
 
-    // Initial load
     loadKdramas();
     loadSidebarLists();
     if (isCdramaMode) {
         loadCdramas();
     }
 
-    // On resize, reload recommendations to update images if needed
     window.addEventListener('resize', function() {
         if (document.getElementById('kdrama-rec').style.display !== 'none') {
             loadKdramas();
@@ -216,7 +210,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Force reload on theme toggle to always update posters
     themeToggle.addEventListener('click', function () {
         if (isCdramaMode) {
             loadCdramas();
@@ -226,21 +219,17 @@ document.addEventListener('DOMContentLoaded', function () {
         loadSidebarLists();
     });
 
-    // Add swipe gesture support for mobile to switch between Kdrama and Cdrama recs
     let touchStartX = 0;
     let touchEndX = 0;
 
     function handleGesture() {
-        // Only trigger on mobile
         if (window.innerWidth > 768) return;
         if (touchEndX < touchStartX - 50) {
-            // Swipe left: show Cdrama
             if (!isCdramaMode) {
                 themeToggle.click();
             }
         }
         if (touchEndX > touchStartX + 50) {
-            // Swipe right: show Kdrama
             if (isCdramaMode) {
                 themeToggle.click();
             }
