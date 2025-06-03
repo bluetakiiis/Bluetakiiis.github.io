@@ -95,6 +95,12 @@ html, body {
   margin: 0;
 }
 
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 h4 {
   color: var(--primary-color);
   padding-top: 20px;
