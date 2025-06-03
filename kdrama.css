@@ -38,10 +38,28 @@ html, body {
 }
 
 .navbar-title {
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
-  flex-grow: 1;
+  flex: 1;               
+  min-width: 0;       
+  margin: 0 0.5rem;      
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2rem;    
+}
+
+.navbar .container-fluid {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; 
+  padding-left: 1rem; 
+  padding-right: 1rem;
+}
+
+.navbar .right-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; 
 }
 
 #menu-btn {
@@ -177,6 +195,18 @@ main.sidebar-open {
 }
 
 /* Responsive styles */
+
+@media (max-width: 480px) {
+  .form-actions {
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+  }
+
+  button[type=submit] {
+    width: auto !important;
+  }
+}
 @media (max-width: 992px) {
   .main-img {
     width: 200px;
@@ -205,6 +235,10 @@ main.sidebar-open {
   }
 }
 @media (max-width: 576px) {
+  .material-symbols-outlined#menu-btn,
+  .right-icons .material-symbols-outlined {
+    font-size: 1.6rem; 
+  }
   .navbar-title {
     font-size: 1.1rem;
   }
