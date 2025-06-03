@@ -88,6 +88,9 @@ html, body {
 
 .icon-white {
   color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding-top: 10px;
 }
 
 .toggle-icon {
