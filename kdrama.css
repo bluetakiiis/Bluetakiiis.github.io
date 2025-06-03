@@ -38,15 +38,14 @@ html, body {
 }
 
 .navbar-title {
-  color: white;
-  flex: 1;               
-  min-width: 0;       
-  margin: 0 0.5rem;      
-  white-space: nowrap; 
+  color: white; 
+  text-align: center;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 1.2rem;    
-  text-align: center;
 }
 
 .navbar .container-fluid {
@@ -58,10 +57,18 @@ html, body {
   padding-right: 1rem;
 }
 
-.navbar .right-icons {
+.navbar {
   display: flex;
   align-items: center;
   gap: 0.8rem; 
+}
+
+.right-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-right: 0; 
+  margin-right: 0;
 }
 
 #menu-btn {
@@ -237,9 +244,8 @@ main.sidebar-open {
   }
 }
 @media (max-width: 576px) {
-  .material-symbols-outlined#menu-btn,
-  .right-icons .material-symbols-outlined {
-    font-size: 1.6rem; 
+  .navbar-title {
+    font-size: 0.95rem;
   }
   .navbar-title {
     font-size: 1.1rem;
@@ -340,7 +346,8 @@ button[type=submit]:hover {
 
 .material-symbols-outlined {
   color: white;
-  padding-right: 20px;
+  padding-right: 0; 
+  margin-right: 0;
 }
 
 @media (max-width: 768px) {
