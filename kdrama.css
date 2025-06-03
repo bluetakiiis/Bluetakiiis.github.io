@@ -86,6 +86,10 @@ html, body {
   padding-top: 10px;
 }
 
+.icon-white {
+  color: white;
+}
+
 .toggle-icon {
   display: flex;
   align-items: center;
