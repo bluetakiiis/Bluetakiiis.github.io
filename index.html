@@ -27,7 +27,27 @@
                 </a>
                 <h1 class="navbar-title mx-auto">Rupika's Kdrama Recs</h1>
                 
-                 <div class="navbar-brand">
+                <div class="navbar-brand">
+                    <a href="#recommend-modal" class="recommend-btn">
+                        <span class="material-symbols-outlined">favorite</span>
+                    </a>
+                    
+                    <div id="recommend-modal" class="modal">
+                        <div class="modal-content">
+                            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                            <h3>❤️ Recommend a Drama!</h3>
+                            <p>Tell me what to watch next:</p>
+                            <form id="recommend-form" action="https://formspree.io/f/movwqyeb" method="POST">
+                                <textarea name="message" placeholder="Your drama rec..." required></textarea>
+                                <div id="form-status" style="margin-top: 10px;"></div>
+                                <div class="form-actions">
+                                    <button type="submit">Send</button>
+                                    <a href="#" class="close"><span class="material-symbols-outlined" id="close-btn">close</span></a>
+                                </div>
+                            </form>
+                            <p id="responseMsg" style="display: none; margin-top: 10px;"></p>
+                        </div>
+                    </div>
                     <span class="material-symbols-outlined" id="theme-toggle">toggle_off</span>
                 </div>
             </div>
@@ -699,6 +719,7 @@
                             <a href="https://t.kisskh.id/1SkG">Watch Now</a>
                         </div>
                     </div>
+                    
                 </div>
             </section>
         </main>
