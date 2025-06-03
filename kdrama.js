@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('cdrama-list').style.display = 'block';
         document.getElementById('kdrama-rec').style.display = 'none';
         document.getElementById('cdrama-rec').style.display = 'block';
+        loadCdramas(); // Load Cdrama recommendations on toggle
     }
 
     menuBtn.addEventListener('click', function () {
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('cdrama-list').style.display = 'block';
             document.getElementById('kdrama-rec').style.display = 'none';
             document.getElementById('cdrama-rec').style.display = 'block';
+            loadCdramas(); // Load Cdrama recommendations on toggle
         } else {
             document.body.classList.remove('cdrama-theme');
             themeToggle.textContent = 'toggle_off';
@@ -104,4 +106,152 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    function getDramaImage(drama) {
+        if (window.innerWidth <= 576 && drama.imageMobile) {
+            return drama.imageMobile;
+        }
+        return drama.image;
+    }
+
+    // Dynamically load Cdrama recommendations from dramas.json
+    async function loadCdramas() {
+        const container = document.getElementById('cdrama-container');
+        if (!container) return;
+        try {
+            const response = await fetch('dramas.json');
+            const data = await response.json();
+            container.innerHTML = '';
+            (data.cdramaRecommendations || []).forEach(drama => {
+                const card = document.createElement('div');
+                card.className = 'main-recommendation';
+                card.innerHTML = `
+                    <img src="${getDramaImage(drama)}" alt="${drama.title}" class="main-img">
+                    <div class="main-text">
+                        <h2 class="main-title">${drama.title}</h2>
+                        <p>${drama.description}</p>
+                        <p><strong>Genre:</strong> ${drama.genre}</p>
+                        <p><strong>Episodes:</strong> ${drama.episodes}</p>
+                        <p><strong>Rating:</strong> ${drama.rating}</p>
+                        <a href="${drama.link}">Watch Now</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        } catch (err) {
+            container.innerHTML = '<p>Failed to load recommendations.</p>';
+        }
+    }
+
+    // Dynamically load Kdrama recommendations from dramas.json
+    async function loadKdramas() {
+        const container = document.getElementById('kdrama-container');
+        if (!container) return;
+        try {
+            const response = await fetch('dramas.json');
+            const data = await response.json();
+            container.innerHTML = '';
+            data.kdramaRecommendations.forEach(drama => {
+                const card = document.createElement('div');
+                card.className = 'main-recommendation';
+                card.innerHTML = `
+                    <img src="${getDramaImage(drama)}" alt="${drama.title}" class="main-img">
+                    <div class="main-text">
+                        <h2 class="main-title">${drama.title}</h2>
+                        <p>${drama.description}</p>
+                        <p><strong>Genre:</strong> ${drama.genre}</p>
+                        <p><strong>Episodes:</strong> ${drama.episodes}</p>
+                        <p><strong>Rating:</strong> ${drama.rating}</p>
+                        <a href="${drama.link}">Watch Now</a>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        } catch (err) {
+            container.innerHTML = '<p>Failed to load recommendations.</p>';
+        }
+    }
+
+    // Dynamically load sidebar lists from dramas.json
+    async function loadSidebarLists() {
+        try {
+            const response = await fetch('dramas.json');
+            const data = await response.json();
+            const kdramaList = document.getElementById('kdrama-list');
+            const cdramaList = document.getElementById('cdrama-list');
+            if (kdramaList) {
+                kdramaList.innerHTML = '';
+                data.kdramaSidebar.forEach(title => {
+                    const li = document.createElement('li');
+                    li.textContent = title;
+                    kdramaList.appendChild(li);
+                });
+            }
+            if (cdramaList) {
+                cdramaList.innerHTML = '';
+                data.cdramaSidebar.forEach(title => {
+                    const li = document.createElement('li');
+                    li.textContent = title;
+                    cdramaList.appendChild(li);
+                });
+            }
+        } catch (err) {
+            // Optionally handle error
+        }
+    }
+
+    // Initial load
+    loadKdramas();
+    loadSidebarLists();
+    if (isCdramaMode) {
+        loadCdramas();
+    }
+
+    // On resize, reload recommendations to update images if needed
+    window.addEventListener('resize', function() {
+        if (document.getElementById('kdrama-rec').style.display !== 'none') {
+            loadKdramas();
+        } else {
+            loadCdramas();
+        }
+    });
+
+    // Force reload on theme toggle to always update posters
+    themeToggle.addEventListener('click', function () {
+        if (isCdramaMode) {
+            loadCdramas();
+        } else {
+            loadKdramas();
+        }
+        loadSidebarLists();
+    });
+
+    // Add swipe gesture support for mobile to switch between Kdrama and Cdrama recs
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function handleGesture() {
+        // Only trigger on mobile
+        if (window.innerWidth > 768) return;
+        if (touchEndX < touchStartX - 50) {
+            // Swipe left: show Cdrama
+            if (!isCdramaMode) {
+                themeToggle.click();
+            }
+        }
+        if (touchEndX > touchStartX + 50) {
+            // Swipe right: show Kdrama
+            if (isCdramaMode) {
+                themeToggle.click();
+            }
+        }
+    }
+
+    document.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    document.addEventListener('touchend', function (e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleGesture();
+    }, false);
 });
