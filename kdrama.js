@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (isCdramaMode) {
     document.body.classList.add("cdrama-theme");
     themeToggle.textContent = "toggle_on";
-    navbarTitle.textContent = "Rupika's Cdrama Recs";
+    navbarTitle.textContent = "Rupika's Cdrama Reko";
     document.getElementById("kdrama-list").style.display = "none";
     document.getElementById("cdrama-list").style.display = "block";
     document.getElementById("kdrama-rec").style.display = "none";
